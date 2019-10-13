@@ -58,7 +58,13 @@ soup = BeautifulSoup(res.content, 'html.parser')
 ```
 그런데 감사하게도 제목은 쉽게 추출해낼 수 있을 것 같다.  
 왜냐하면 h1태그의 tv-title 클래스에 해당되는 값이 `<h1 class="tv-title">Dokidoki Little Ooyasan 2</h1>` 뿐이기 때문인데, 만약에 다른 요소도 있었다면, 적절히 태그와 클래스를 선택해야만 했을 것이다.
-
+태그와 클래스를 이용하여 정보를 추출하는 것은 다음과 같이 할 수 있다.
+```python
+title = soup.find('h1', attrs={'class': 'tv-title'}).text
+```
+우선 soup라는 객체에는 html을 파싱한 내용물이 있을 것인데, `soup.find('h1', attrs={'class': 'tv-title'})`를 이용하여 `<h1 class="tv-title">Dokidoki Little Ooyasan 2</h1>`를 추출해낸다. 그리고 이 코드에서 `Dokidoki Little Ooyasan 2`만을 추출해내기 위해서 .text를 이용하면 해당 애니메이션의 제목을 얻어낼 수 있다.
+> `soup.find('h1', attrs={'class': 'tv-title'})`  
+> `<h1 class="tv-title">Dokidoki Little Ooyasan 2</h1>`
 
 ### 소스코드
 ```python
