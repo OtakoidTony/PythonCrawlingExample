@@ -67,8 +67,12 @@ title = soup.find('h1', attrs={'class': 'tv-title'}).text
 | |태그|클래스|  
 |------|---|---|   
 |Title|h1|tv-title|  
-|brand|a|hvpimbc-text|  
-|description|div|mt-3 mb-0 hvpist-description|  
+|Brand|a|hvpimbc-text|  
+|Description|div|mt-3 mb-0 hvpist-description|  
+|Tags Parent|div|hvpi-summary|  
+|Tags|a| |  
+|Cover Parent|div|hvpi-cover-container|  
+|Cover|img| |  
 
 ### 소스코드
 ```python
