@@ -63,11 +63,14 @@ soup = BeautifulSoup(res.content, 'html.parser')
 title = soup.find('h1', attrs={'class': 'tv-title'}).text
 ```
 우선 soup라는 객체에는 html을 파싱한 내용물이 있을 것인데, `soup.find('h1', attrs={'class': 'tv-title'})`를 이용하여 `<h1 class="tv-title">Dokidoki Little Ooyasan 2</h1>`를 추출해낸다. 그리고 이 코드에서 `Dokidoki Little Ooyasan 2`만을 추출해내기 위해서 .text를 이용하면 해당 애니메이션의 제목을 얻어낼 수 있다.  
-| |태그|클래스|
-|------|---|---|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
+
+
+| |태그|클래스|  
+|------|---|---|   
+|테스트1|테스트2|테스트3|  
+|테스트1|테스트2|테스트3|  
+|테스트1|테스트2|테스트3|  
+
 
 * Title: h1, 'tv-title'
 
