@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 ```
 * requests는 http에 요청을 보낼 때 사용하는 패키지이며, 이를 통해 `https://hanime.tv/videos/hentai/(애니메이션 제목)` 의 html소스를 가져올 것이다. 이 때 사용할 방식은 GET요청을 사용한다.  
 * BeautifulSoup은 파이썬을 사용하여 웹 크롤링을 할 때 주로 사용되는 패키지이며, requests를 이용해 얻은 html소스로부터 얻고자하는 정보를 추출해낸다.
+
 #### 입력값 보정하기
 입력값을 title이라고 하자. 보통 제목을 입력할 때 제목에 띄어쓰기가 있다면 사용자 입장에서는 대다수가 -대신에 띄어쓰기로 입력할 것이다. 예로 사용자가 dokidoki little ooyasan 2를 입력했다고 가정하자.  
 그러면 title="dokidoki little ooyasan 2"이므로 요청할 주소는 다음과 같이 될 것이다.
@@ -41,12 +42,14 @@ input_url = 'https://hanime.tv/videos/hentai/'+title
 headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
 ```
+
 #### html 가져오기
 ```python
 res = requests.get(input_url, headers=headers)
 soup = BeautifulSoup(res.content, 'html.parser')
 ```
 `requests.get(input_url, headers=headers)`를 이용하여 input_url에 get 요청을 보내고, `BeautifulSoup(res.content, 'html.parser')`를 이용하여 html 소스를 파싱한다.
+
 #### 정보 추출하기
 이제 남은 것은 정보를 추출하기만 하면 된다. `https://hanime.tv/videos/hentai/dokidoki-little-ooyasan-2`의 html 소스를 보면 다음과 같은 내용이 있을 것이다.
 ```html
@@ -147,6 +150,7 @@ cover_img = cover_div.find('img')
 cover = cover_img.get('src')
 ```
 위의 코드를 실행하면, `cover="https://i0.wp.com/htvassets.club/images/covers/dokidoki-little-ooyasan-2.png?quality=100"`이 된다.
+
 ### 소스코드
 ```python
 import requests
