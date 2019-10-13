@@ -118,7 +118,32 @@ title = soup.find('h1', attrs={'class': 'tv-title'}).text
         </div>
     </div>
 ```
-
+위 소스를 보면 장르의 태그는 a이고 상위 클래스가 hvpi-summary라는 것을 알 수 있다. 따라서 장르를 추출할 때는 다음과 같이 할 수 있다.
+```python
+soup = soup.find('div', attrs={'class': "hvpi-summary"})
+tags_a = soup.find_all('a')
+```
+그러나 문제는 이렇게 얻은 장르 데이터를 어떻게 쓸 수 있는가인데, 왜냐하면 soup.find_all('a')는 List Iterator이기 때문에 바로 사용하는 것이 불가능하기 때문이다. 따라서 자유로운 조작을 위해 다음과 같이 작성해야 한다.
+```python
+tags = []
+for i in tags_a:
+    tags.append(i.text)
+```
+위와 같이 작성하면, soup.find_all('a')의 결과물이 List Iterator이며 각 요소들이 html형식이라는 점을 해결할 수 있다.
+마지막으로 커버 이미지를 추출해보자. 커버에 대한 정보는 다음과 같다.
+```html
+<div class="hvpi-cover-container">
+    <img src="https://i0.wp.com/htvassets.club/images/covers/dokidoki-little-ooyasan-2.png?quality=100" alt="Dokidoki Little Ooyasan 2 dvd blu-ray video cover art" class="hvpi-cover">
+</div>
+```
+따라서 다음과 같이 이미지를 추출할 수 있다.
+```python
+soup = BeautifulSoup(res.content, 'html.parser')
+cover_div = soup.find('div', attrs={'class': "hvpi-cover-container"})
+cover_img = cover_div.find('img')
+cover = cover_img.get('src')
+```
+위의 코드를 실행하면, `cover="https://i0.wp.com/htvassets.club/images/covers/dokidoki-little-ooyasan-2.png?quality=100"`이 된다.
 ### 소스코드
 ```python
 import requests
