@@ -150,7 +150,7 @@ cover_div = soup.find('div', attrs={'class': "hvpi-cover-container"})
 cover_img = cover_div.find('img')
 cover = cover_img.get('src')
 ```
-위의 코드를 실행하면, `cover="https://i0.wp.com/htvassets.club/images/covers/dokidoki-little-ooyasan-2.png?quality=100"`이 된다.
+위의 코드를 실행하면, cover="https://i0.wp.com/htvassets.club/images/covers/dokidoki-little-ooyasan-2.png?quality=100"이 된다.
 
 ### 소스코드
 ```python
