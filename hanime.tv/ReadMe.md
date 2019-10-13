@@ -74,6 +74,51 @@ title = soup.find('h1', attrs={'class': 'tv-title'}).text
 |Cover Parent|div|hvpi-cover-container|  
 |Cover|img| |  
 
+위 표를 보면 Parent가 있는 경우가 있다. 이 경우는 아래와 같은 경우를 표시한 것이다.
+```html
+<div class="hvpi-summary">
+    <div class="hvpis-text grey--text text--lighten-1">
+        <a href="/browse/tags/plot" rel="nofollow" alt="Explore more videos that have the plot tag." title="Explore more videos that have the plot tag." class="ml-0 mr-3 btn btn--outline btn--depressed btn--router grey--text">
+            <div class="btn__content">
+                plot
+            </div>
+        </a>
+        <a href="/browse/tags/ahegao" rel="nofollow" alt="Explore more videos that have the ahegao tag." title="Explore more videos that have the ahegao tag." class="ml-0 mr-3 btn btn--outline btn--depressed btn--router grey--text">
+            <div class="btn__content">
+                ahegao
+            </div>
+        </a>
+        <a href="/browse/tags/hand job" rel="nofollow" alt="Explore more videos that have the hand job tag." title="Explore more videos that have the hand job tag." class="ml-0 mr-3 btn btn--outline btn--depressed btn--router grey--text">
+            <div class="btn__content">
+                hand job
+            </div>
+        </a>
+        <a href="/browse/tags/censored" rel="nofollow" alt="Explore more videos that have the censored tag." title="Explore more videos that have the censored tag." class="ml-0 mr-3 btn btn--outline btn--depressed btn--router grey--text">
+            <div class="btn__content">
+                censored
+            </div>
+        </a>
+        <a href="/browse/tags/creampie" rel="nofollow" alt="Explore more videos that have the creampie tag." title="Explore more videos that have the creampie tag." class="ml-0 mr-3 btn btn--outline btn--depressed btn--router grey--text">
+            <div class="btn__content">
+                creampie
+            </div>
+        </a>
+        <a href="/browse/tags/hd" rel="nofollow" alt="Explore more videos that have the hd tag." title="Explore more videos that have the hd tag." class="ml-0 mr-3 btn btn--outline btn--depressed btn--router grey--text">
+            <div class="btn__content">
+                hd
+            </div>
+        </a>
+        <a href="/browse/tags/loli" rel="nofollow" alt="Explore more videos that have the loli tag." title="Explore more videos that have the loli tag." class="ml-0 mr-3 btn btn--outline btn--depressed btn--router grey--text">
+            <div class="btn__content">
+                loli
+            </div>
+        </a>
+        <div class="mt-3 mb-0 hvpist-description">
+            Miyuri is a landlord who has sex with the tenant of one of her beat-up apartments, Daisuke. Miyuri ends up borrowing Daisuke’s shower and has sex with him in her sexy bathrobe! Miyuri uses her slutty hip thrusts to squeeze everything out from Daisuke! Getting all sweaty, they take a shower together. “My pussy is going to be full of all your cum at this rate!” Miyuri becomes a body sponge and washes up, down, back, front, every single corner! In return, Daisuke washes her as well! His fat, hard dick cleans every inch of her pussy!
+        </div>
+    </div>
+```
+
 ### 소스코드
 ```python
 import requests
