@@ -44,6 +44,21 @@ res = requests.get(input_url, headers=headers)
 soup = BeautifulSoup(res.content, 'html.parser')
 ```
 `requests.get(input_url, headers=headers)`를 이용하여 input_url에 get 요청을 보내고, `BeautifulSoup(res.content, 'html.parser')`를 이용하여 html 소스를 파싱한다.
+#### 정보 추출하기
+이제 남은 것은 정보를 추출하기만 하면 된다. `https://hanime.tv/videos/hentai/dokidoki-little-ooyasan-2`의 html 소스를 보면 다음과 같은 내용이 있을 것이다.
+```html
+<div class="action-bar flex column">
+    <div class="htv-video-page-action-bar flex wrap">
+        <div class="title-views flex column">
+            <h1 class="tv-title">Dokidoki Little Ooyasan 2</h1>
+            <div class="tv-views grey--text">1,629,353 views</div>
+        </div>
+        <div class="actions flex row justify-right align-right"><span class="tooltip tooltip--top"><div class="tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Like</span></div><span><div class="hvpab-btn flex justify-center align-center primary-color-hover"><i aria-hidden="true" class="icon mdi mdi-heart grey--text"></i> <span class="hvpabb-text ">6K</span></div>
+    </span>
+```
+그런데 감사하게도 제목은 쉽게 추출해낼 수 있을 것 같다.  
+왜냐하면 h1태그의 tv-title 클래스에 해당되는 값이 `<h1 class="tv-title">Dokidoki Little Ooyasan 2</h1>` 뿐이기 때문인데, 만약에 다른 요소도 있었다면, 적절히 태그와 클래스를 선택해야만 했을 것이다.
+
 
 ### 소스코드
 ```python
